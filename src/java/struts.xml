@@ -1,0 +1,58 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.action.extension" value="html" /> 
+    <package name="default" extends="struts-default">
+        <action name="ajouterClient">
+            <result name="success">/ajouterClient.jsp</result>
+        </action>
+        <action name="addClient" class="com.elmrabti.controller.ClientController" method="addClient">
+            <result name="success">/ajouterClient.jsp</result>
+            <result name="input">/ajouterClient.jsp</result>
+        </action>
+        <action name="afficherClient" class="com.elmrabti.controller.ClientController" method="getClientByCode">
+            <result name="success">/consulterClient.jsp</result>
+            <result name="input">/consulterClient.jsp</result>
+        </action>
+        <action name="afficherClients" class="com.elmrabti.controller.ClientController">
+            <result name="success">/afficherClients.jsp</result>
+        </action>
+        <action name="consulterClient">
+            <result name="success">/consulterClient.jsp</result>
+        </action>
+        <action name="consulterCompte">
+            <result name="success">/consulterCompte.jsp</result>
+        </action>
+        <action name="afficherCompte" method="getCompteByNum" class="com.elmrabti.controller.CompteController">
+            <result name="success">/consulterCompte.jsp</result>
+            <result name="input">/consulterCompte.jsp</result>
+        </action>
+        <action name="addCompte" method="addCompte" class="com.elmrabti.controller.CompteController">
+            <result name="success">/ajouterCompte.jsp</result>
+            <result name="input">/ajouterCompte.jsp</result>
+        </action>
+        <action name="ajouterCompte">
+            <result name="success">/ajouterCompte.jsp</result>
+        </action>
+        <action name="ajouterOperation">
+            <result name="success">/ajouterOperation.jsp</result>
+        </action>
+        <action name="index">
+            <result name="success">/index.jsp</result>
+        </action>
+        <action name="consulterOperations">
+            <result name="success">/consulterOperations.jsp</result>
+        </action>
+        <action name="afficherOperations" method="afficherOperations" class="com.elmrabti.controller.OperationController">
+            <result name="success">/consulterOperations.jsp</result>
+        </action>
+        <action name="addOperation" method="addOperation" class="com.elmrabti.controller.OperationController">
+            <result name="success">/ajouterOperation.jsp</result>
+            <result name="input">/ajouterOperation.jsp</result>
+        </action>
+    </package>
+</struts>
